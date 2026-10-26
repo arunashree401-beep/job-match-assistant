@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Arunashree Job Match Assistant",
+  "version": "0.5.0",
+  "description": "Batch job discovery, eligibility filtering, duplicate prevention, next-job queue and application tracking.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.naukri.com/*",
+    "https://naukri.com/*",
+    "https://www.linkedin.com/*"
+  ],
+  "action": {
+    "default_title": "Job Match Assistant",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.naukri.com/*",
+        "https://naukri.com/*",
+        "https://www.linkedin.com/jobs/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
